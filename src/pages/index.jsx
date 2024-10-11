@@ -1,9 +1,9 @@
-import styles from '@/styles/calendar.module.css';
-import TagSEO from '@/components/TagSEO';
-
-const DAYS_OF_WEEK = [
-  'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'
-];
+import styles from "@/styles/calendar.module.css";
+import TagSEO from "@/components/TagSEO";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Pricing from "@/components/Pricing";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,10 +17,10 @@ export default function Home() {
 
       <main>
         <Header></Header>
-        <Landing></Landing>
+        <Hero></Hero>
         <Pricing></Pricing>
+        <Footer></Footer>
       </main>
-
     </>
   );
 }

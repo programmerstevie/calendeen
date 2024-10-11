@@ -1,8 +1,9 @@
 import Head from "next/head";
 
-const DESCRIPTION = "A calendar app designed to help you manage your time more effectively."
-const URL = "https://calendeen.com"
-const TITLE = "Calendeen"
+const DESCRIPTION =
+  "A calendar app designed to help you manage your time more effectively.";
+const URL = "https://calendeen.com";
+const TITLE = "Calendeen";
 
 // TODO: Add /og-image.jpg
 // TODO: Add /twitter-image.jpg
@@ -23,5 +24,5 @@ export default function TagSEO(props) {
       <meta name="twitter:description" content={DESCRIPTION} />
       <meta name="twitter:image" content="/twitter-image.jpg" />
     </Head>
-  )
+  );
 }

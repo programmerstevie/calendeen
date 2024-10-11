@@ -1,3 +1,12 @@
+const DAYS_OF_WEEK = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+];
 
 export default function CalendarPage() {
   return (
@@ -14,9 +23,8 @@ export default function CalendarPage() {
   );
 }
 
-
 function Calendar() {
-  const FIRST_COL_WIDTH = '70px';
+  const FIRST_COL_WIDTH = "70px";
 
   return (
     <>
@@ -25,8 +33,8 @@ function Calendar() {
         style={{
           gridTemplateColumns: `${FIRST_COL_WIDTH} repeat(7, 1fr)`,
           gridTemplateRows: `1fr`,
-          gap: '1px',
-          border: '1px solid rgba(0, 0, 0, 0.12)'
+          gap: "1px",
+          border: "1px solid rgba(0, 0, 0, 0.12)",
         }}
       >
         <div></div>
@@ -36,7 +44,7 @@ function Calendar() {
             className="border p-2 capitalize"
             style={{
               gridColumn: `${ix + 2} / span 1`,
-              gridRow: '1 / span 1',
+              gridRow: "1 / span 1",
             }}
           >
             {day}
@@ -48,27 +56,31 @@ function Calendar() {
        MAKE IT HAVE 25 ROWS WHERE THE 1ST AND LAST ROWS ARE HALF THE LENGTH 
        e.g. grid-row: 1fr repeat(23, 2fr) 1fr 
        */}
-      <div className="overflow-y-auto scrollbar-hide" style={{ height: 'calc(100vh - 44px)' }}>
+      <div
+        className="overflow-y-auto scrollbar-hide"
+        style={{ height: "calc(100vh - 44px)" }}
+      >
         <div
           className="grid bg-white"
           style={{
             gridTemplateColumns: `${FIRST_COL_WIDTH} repeat(7, 1fr)`,
             gridTemplateRows: `repeat(24, 1fr)`,
-            gap: '1px',
-            border: '1px solid rgba(0, 0, 0, 0.12)',
+            gap: "1px",
+            border: "1px solid rgba(0, 0, 0, 0.12)",
           }}
         >
-          {
-            Array.from({ length: 22 }, (_, h) => (<div
+          {Array.from({ length: 22 }, (_, h) => (
+            <div
               key={h + 0.5}
               className="border p-2 text-center h-16"
               style={{
                 gridColumn: `1 / span 1`,
                 gridRow: `${h + 2} / span 1`,
-              }}>
+              }}
+            >
               hello
-            </div>))
-          }
+            </div>
+          ))}
           {DAYS_OF_WEEK.map((_, ix) => (
             <GridColumn key={ix} col={ix + 2} />
           ))}
